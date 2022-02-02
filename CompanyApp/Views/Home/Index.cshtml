@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dashboard</h1>
+</div>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ">
+            <div class="row ">
+                <div class="col-xl-2"></div>
+                <div class="col-xl-5 col-lg-6">
+                    <div class="card bg-blue card-red">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-code-branch"></i></div>
+                            <div class="mb-4">
+                                <h5 class="card-title mb-0">Departments</h5>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h2 class="d-flex align-items-center font-weight-bold mb-0">
+                                        15.07k
+                                    </h2>
+                                </div>
+                            </div>
+                            
+                            <div class="btn-area">
+                                <a asp-controller="Department" asp-action="Index" class="btn btn-outline-warning btn-lg btn-dep">Departments</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6">
+                    <div class="card bg-yellow">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
+                            <div class="mb-4">
+                                <h5 class="card-title mb-0">Employees</h5>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h2 class="d-flex align-items-center font-weight-bold mb-0">
+                                        15.07k
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="btn-area">
+                                <a asp-controller="Employee" asp-action="Index" class="btn btn-outline-dark btn-lg btn-emp">Employees</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

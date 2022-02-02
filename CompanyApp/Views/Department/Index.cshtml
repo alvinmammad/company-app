@@ -1,0 +1,74 @@
+﻿<div class="text-center" style="margin-bottom:70px;">
+    <h1 class="display-4">Department list</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="createDep mb-5">
+            <a asp-controller="Department" asp-action="Create" class="btn btn-outline-primary">Create department</a>
+        </div>
+    </div>
+
+    
+    <div class="row">
+        <table class="table table-bordered shadow-lg p-3 mb-5 bg-white rounded">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                    <th scope="col">Edit / Delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td> mdo</td>
+                    <td>
+                        <a class="editEmployee text-success">
+                            <i class="fas fa-pen"></i>
+                        </a>
+
+                        <a class="deleteEmployee text-danger">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td> mdo</td>
+                    <td>
+                        <a class="editEmployee">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                        <a class="deleteEmployee">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td> mdo</td>
+                    <td>
+                        <a class="editEmployee">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                        <a class="deleteEmployee">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
