@@ -1,0 +1,72 @@
+﻿@model CompanyApp.Models.Department
+
+<div class="text-center" style="margin-bottom:70px;">
+    <h1 class="display-4">Edit department</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.ValidationSummary(true)
+                                @Html.HiddenFor(model => model.ID)
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DepName)
+                                    @Html.EditorFor(model => model.DepName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DepName, "", new { @class = "text-danger" })
+                                    @*<input type="text" class="form-control" name="Name" id="Name">*@
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DepManagerName)
+                                    @Html.EditorFor(model => model.DepManagerName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DepManagerName, "", new { @class = "text-danger" })
+                                    @*<input type="text" class="form-control" name="Name" id="Name">*@
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DepManagerSurname)
+                                    @Html.EditorFor(model => model.DepManagerSurname, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DepManagerSurname, "", new { @class = "text-danger" })
+                                    @*<input type="text" class="form-control" name="Name" id="Name">*@
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="card-body text-center">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <input type="submit" value="Save" class="btn btn-outline-primary" />
+
+                                </li>
+                                <li class="list-inline-item">
+                                    <a asp-controller="Department" asp-action="Index">Go to index </a>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    }
+                    @*<form id="employee-form" asp-controller="Department" asp-action="Create" method="post">*@
+
+
+
+                    @*</form>*@
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

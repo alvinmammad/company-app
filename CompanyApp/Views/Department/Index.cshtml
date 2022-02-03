@@ -1,4 +1,6 @@
-﻿<div class="text-center" style="margin-bottom:70px;">
+﻿@model IEnumerable<CompanyApp.Models.Department>
+
+<div class="text-center" style="margin-bottom:70px;">
     <h1 class="display-4">Department list</h1>
 </div>
 
@@ -9,66 +11,60 @@
         </div>
     </div>
 
-    
+
     <div class="row">
         <table class="table table-bordered shadow-lg p-3 mb-5 bg-white rounded">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.ID)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.DepName)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.DepManagerName)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.DepManagerSurname)</th>
                     <th scope="col">Edit / Delete</th>
-
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td> mdo</td>
-                    <td>
-                        <a class="editEmployee text-success">
-                            <i class="fas fa-pen"></i>
-                        </a>
+                @foreach (Department department in Model)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(dep => department.ID)</th>
+                        <td>@Html.DisplayFor(dep => department.DepName)</td>
+                        <td>@Html.DisplayFor(dep => department.DepManagerName)</td>
+                        <td>@Html.DisplayFor(dep => department.DepManagerSurname)</td>
+                        <td>
+                            <a asp-controller="Department" asp-action="Edit" asp-route-id="@department.ID" class="editEmployee text-success">
+                                <i class="fas fa-pen"></i>
+                            </a>
 
-                        <a class="deleteEmployee text-danger">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td> mdo</td>
-                    <td>
-                        <a class="editEmployee">
-                            <i class="fas fa-pen"></i>
-                        </a>
-                        <a class="deleteEmployee">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td> mdo</td>
-                    <td>
-                        <a class="editEmployee">
-                            <i class="fas fa-pen"></i>
-                        </a>
-                        <a class="deleteEmployee">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
+                            <a asp-controller="Department" asp-action="Delete" asp-route-id="@department.ID" class="deleteEmployee text-danger">
+                                <i class="fas fa-trash"></i>
+                            </a>
+
+                            <a asp-controller="Department" asp-action="Details" asp-route-id="@department.ID" class="detailEmployee text-info">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
             </tbody>
         </table>
 
     </div>
 </div>
 
+@section Scripts{
+    <script type="text/javascript">
+        function showModal(message) {
+            var alertBody = document.getElementById('successAlert');
+            alertBody.innerHTML = message;
+            $('#modalSuccess').modal('show');
+        }
+        $(document).ready(function () {
+            var msg = "@TempData["Success"]";
+            if (msg) {
+                showModal(msg);
+            }
+        })
+    </script>
+}

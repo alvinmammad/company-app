@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     @*<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>*@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    @*@await RenderSectionAsync("Styles", required: false)*@
 
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -34,6 +35,24 @@
     </header>
     @*<div class="container">
         <main role="main" class="pb-3">*@
+                <div id="modalSuccess" class="modal fade text-width:30%;" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Great !</h2>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div id="successAlert" class="modal-body alert alert-success">
+                                message
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             @RenderBody()
         @*</main>
     </div>*@

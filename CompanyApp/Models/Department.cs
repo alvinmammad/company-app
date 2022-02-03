@@ -13,15 +13,15 @@ namespace CompanyApp.Models
         
         [Required(ErrorMessage = "Department name required")]
         [Display(Name = "Department name")]
-        [MaxLength(40)]
+        [MaxLength(40),MinLength(2)]
         public string DepName { get; set; }
         [Required(ErrorMessage = "Department manager name required")]
-        [Display(Name = "First name")]
+        [Display(Name = "Department manager name")]
         [MaxLength(30), MinLength(3)]
         public string DepManagerName { get; set; }
         [Required(ErrorMessage = "Department manager surname required")]
-        [Display(Name = "Surname")]
-        [MaxLength(40)]
+        [Display(Name = "Department manager surname")]
+        [MaxLength(40),MinLength(3)]
 
         public string DepManagerSurname { get; set; }
 

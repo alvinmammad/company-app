@@ -1,0 +1,44 @@
+﻿@model CompanyApp.Models.Department
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="text-center" style="margin-bottom:70px;">
+    <h1 class="display-4">Department detail</h1>
+</div>
+
+
+
+ <div class="container">
+     <div class="row">
+         <dl class="row">
+             <dt class="col-sm-4">
+                 @Html.DisplayNameFor(model => model.DepName)
+             </dt>
+             <dd class="col-sm-8">
+                 @Html.DisplayFor(model => model.DepName)
+             </dd>
+             <dt class="col-sm-4">
+                 @Html.DisplayNameFor(model => model.DepManagerName)
+             </dt>
+             <dd class="col-sm-8">
+                 @Html.DisplayFor(model => model.DepManagerName)
+             </dd>
+             <dt class="col-sm-4">
+                 @Html.DisplayNameFor(model => model.DepManagerSurname)
+             </dt>
+             <dd class="col-sm-8">
+                 @Html.DisplayFor(model => model.DepManagerSurname)
+             </dd>
+         </dl>
+
+     </div>
+     <div class="row">
+         <div>
+             <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-outline-info">Edit</a> |
+             <a asp-action="Index">Back to List</a>
+         </div>
+     </div>
+ </div>
+

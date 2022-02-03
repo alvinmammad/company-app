@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using CompanyApp.DAL;
+using CompanyApp.Interfaces;
+using CompanyApp.Repositories;
 
 namespace CompanyApp
 {
@@ -26,6 +28,7 @@ namespace CompanyApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IDepartment, DepartmentRepository>();
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));
         }
 
