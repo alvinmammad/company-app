@@ -151,3 +151,6 @@ C:\Users\Elvin\source\repos\CompanyApp\CompanyApp\bin\Debug\net5.0\runtimes\win-
 C:\Users\Elvin\source\repos\CompanyApp\CompanyApp\obj\Debug\net5.0\Razor\Views\Department\Details.cshtml.g.cs
 C:\Users\Elvin\source\repos\CompanyApp\CompanyApp\obj\Debug\net5.0\Razor\Views\Department\Edit.cshtml.g.cs
 C:\Users\Elvin\source\repos\CompanyApp\CompanyApp\obj\Debug\net5.0\Razor\Views\Department\Delete.cshtml.g.cs
+C:\Users\Elvin\source\repos\CompanyApp\CompanyApp\obj\Debug\net5.0\Razor\Views\Employee\Edit.cshtml.g.cs
+C:\Users\Elvin\source\repos\CompanyApp\CompanyApp\obj\Debug\net5.0\Razor\Views\Employee\Delete.cshtml.g.cs
+C:\Users\Elvin\source\repos\CompanyApp\CompanyApp\obj\Debug\net5.0\Razor\Views\Employee\Details.cshtml.g.cs

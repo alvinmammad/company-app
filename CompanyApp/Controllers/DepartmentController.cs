@@ -17,7 +17,7 @@ namespace CompanyApp.Controllers
             List<Department> departments = _departmentRepository.GetDepartments();
             return View(departments);
         }
-        //private readonly AppDbContext _context;
+        
         private readonly IDepartment _departmentRepository;
 
         public DepartmentController(/*AppDbContext context ,*/ IDepartment departmentRepository)
@@ -98,6 +98,7 @@ namespace CompanyApp.Controllers
             try
             {
                 department = _departmentRepository.Delete(department);
+                TempData["Success"] = "Department deleted successfully";
 
             }
             catch

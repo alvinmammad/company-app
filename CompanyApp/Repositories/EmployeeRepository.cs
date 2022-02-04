@@ -1,10 +1,11 @@
-﻿using CompanyApp.DAL;
-using CompanyApp.Interfaces;
-using CompanyApp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CompanyApp.DAL;
+using CompanyApp.Interfaces;
+using CompanyApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CompanyApp.Repositories
 {
@@ -18,28 +19,42 @@ namespace CompanyApp.Repositories
         }
 
         public Employee Create(Employee employee)
+           
         {
-            throw new NotImplementedException();
+            _context.Employees.Add(employee);
+            _context.SaveChanges();
+            return employee;
         }
 
         public Employee Delete(Employee employee)
         {
-            throw new NotImplementedException();
+            _context.Employees.Attach(employee);
+            _context.Entry(employee).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+            _context.SaveChanges();
+            return employee;
         }
 
         public Employee Edit(Employee employee)
         {
-            throw new NotImplementedException();
+            _context.Employees.Attach(employee);
+            _context.Entry(employee).State = EntityState.Modified;
+            _context.SaveChanges();
+            return employee;
         }
+
+        
 
         public Employee GetEmployee(int id)
         {
-            throw new NotImplementedException();
+            
+            Employee employee = _context.Employees.Include(e => e.Department).Where(e => e.ID == id).FirstOrDefault();
+            return employee;
         }
 
         public List<Employee> GetEmployees()
         {
-            throw new NotImplementedException();
+            List<Employee> employees = _context.Employees.Include(e => e.Department).ToList();
+            return employees;
         }
     }
 }

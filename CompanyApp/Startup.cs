@@ -29,6 +29,8 @@ namespace CompanyApp
         {
             services.AddControllersWithViews();
             services.AddScoped<IDepartment, DepartmentRepository>();
+            services.AddScoped<IEmployee, EmployeeRepository>();
+
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));
         }
 

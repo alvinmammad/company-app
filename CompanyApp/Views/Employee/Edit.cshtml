@@ -1,7 +1,7 @@
 ﻿@model CompanyApp.Models.Employee
 
 <div class="text-center" style="margin-bottom:70px;">
-    <h1 class="display-4">Create department</h1>
+    <h1 class="display-4">Edit employee</h1>
 </div>
 
 <div class="container">
@@ -14,6 +14,8 @@
                         @Html.AntiForgeryToken()
                     <div class="row">
                         <div class="col-md-6">
+                            @Html.ValidationSummary(true)
+                            @Html.HiddenFor(model => model.ID)
                             <div class="form-group">
                                 @Html.LabelFor(model => model.FirstName)
                                 @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
@@ -85,43 +87,41 @@
                                 @*<input type="text" class="form-control" name="Name" id="Name">*@
                             </div>
                         </div>
-                        @*<div class="col-md-6">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.DepartmentID)
-                                <select class="form-control" asp-for="@Model.DepartmentID">
-                                    <option value="">Select deparment</option>
-                                    @foreach (var department in Model.Departments)
-                                    {
-                                        <option value="@department.ID">@department.DepName</option>
-                                    }
-                                </select>
-                             
-                                @Html.ValidationMessageFor(model => model.DepartmentID, "", new { @class = "text-danger" })
-                               
-                            </div>
-                        </div>*@
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.DepartmentID)
-                            <select asp-for="DepartmentID" class="form-control" asp-items="ViewBag.DepartmentID"></select>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Department</label>
+                                <select asp-for="DepartmentID" class="form-control" asp-items="ViewBag.DepartmentID"></select>
+                                @*@Html.DropDownList("DepartmentID")*@
+                                <span asp-validation-for="DepartmentID" class="text-danger"></span>
+                            </div>
                         </div>
-                    </div>
+                        
+
                         @*<input asp-for="@Model.ID" type="hidden" name="name" value="@Model.ID" />*@
 
 
                     </div>
                         <div class="card-body text-center">
-                            <input type="submit" value="Save" id="createDep" class="btn btn-outline-primary" />
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <input type="submit" value="Save" class="btn btn-outline-primary" />
+
+                                </li>
+                                <li class="list-inline-item">
+                                    <a asp-controller="Employee" asp-action="Index">Go to index </a>
+
+                                </li>
+
+                            </ul>
                         </div>
 
 
                     }
                     @*<form id="employee-form" asp-controller="Department" asp-action="Create" method="post">*@
 
-                    <div>
-                        <button id="btnn">click</button>
-                    </div>
+                  
 
                     @*</form>*@
 

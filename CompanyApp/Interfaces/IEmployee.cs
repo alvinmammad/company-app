@@ -7,12 +7,12 @@ using CompanyApp.Models;
 
 namespace CompanyApp.Interfaces
 {
-    interface IEmployee
+    public interface IEmployee
     {
         List<Employee> GetEmployees();
         Employee GetEmployee(int id);
         Employee Create(Employee employee);
-        Employee Edit(Employee employee);
+        Employee Edit( Employee employee);
         Employee Delete(Employee employee);
     }
 }
