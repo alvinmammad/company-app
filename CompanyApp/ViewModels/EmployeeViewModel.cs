@@ -7,7 +7,8 @@ namespace CompanyApp.ViewModels
 {
     public class EmployeeViewModel
     {
-        public Employee Employees { get; set; }
-        public IEnumerable<Department> Departments { get; set; }
+        public int EmployeeCount;
+        public int DepartmentCount;
+
     }
 }

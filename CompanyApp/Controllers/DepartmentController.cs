@@ -14,15 +14,16 @@ namespace CompanyApp.Controllers
        
         public IActionResult Index()
         {
+            
             List<Department> departments = _departmentRepository.GetDepartments();
             return View(departments);
         }
         
         private readonly IDepartment _departmentRepository;
 
-        public DepartmentController(/*AppDbContext context ,*/ IDepartment departmentRepository)
+        public DepartmentController( IDepartment departmentRepository)
         {
-            //_context = context;
+           
             _departmentRepository = departmentRepository;
         }
 

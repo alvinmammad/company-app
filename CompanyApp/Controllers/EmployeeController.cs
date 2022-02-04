@@ -1,4 +1,5 @@
-﻿using CompanyApp.Interfaces;
+﻿using CompanyApp.DAL;
+using CompanyApp.Interfaces;
 using CompanyApp.Models;
 using CompanyApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -30,13 +31,6 @@ namespace CompanyApp.Controllers
         public IActionResult Create()
         {
             ViewData["DepartmentID"] = new SelectList(_departmentRepository.GetDepartments(), "ID", "DepName");
-
-            //EmployeeViewModel vm = new EmployeeViewModel()
-            //{
-            //    Employees = new Employee(),
-            //    Departments = _departmentRepository.GetDepartments().ToList()
-
-            //};
             return View();
         }
         [HttpPost]
@@ -44,8 +38,10 @@ namespace CompanyApp.Controllers
         {
             if (ModelState.IsValid)
             {
+               
                 try
                 {
+                   
                     employee = _employeeRepository.Create(employee);
                     TempData["Success"] = "Employee created successfully";
                     return RedirectToAction(nameof(Index));
@@ -56,8 +52,7 @@ namespace CompanyApp.Controllers
 
                 }
             }
-            //ViewData["DepartmentID"] = new SelectList(_departmentRepository.GetDepartments(), "ID", "DepName");
-            //ViewBag.DepartmentID = new SelectList(_departmentRepository.GetDepartments(), "ID", "DepName");
+            
             ViewData["DepartmentID"] = new SelectList(_departmentRepository.GetDepartments(), "ID", "DepName", employee.DepartmentID);
 
 
@@ -91,7 +86,6 @@ namespace CompanyApp.Controllers
                 }
 
             }
-            //ViewData["DepartmentID"] = new SelectList(_departmentRepository.GetDepartments(), "ID", "DepName");
             ViewData["DepartmentID"] = new SelectList(_departmentRepository.GetDepartments(), "ID", "DepName", employee.DepartmentID);
 
             return View(employee);

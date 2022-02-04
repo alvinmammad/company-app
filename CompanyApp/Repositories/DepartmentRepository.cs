@@ -54,18 +54,5 @@ namespace CompanyApp.Repositories
             return department;
         }
 
-        //public Department Delete(int id)
-        //{
-
-        //    Department department = _context.Departments.Where(d => d.ID == id).FirstOrDefault();
-
-        //    _context.Departments.Attach(department);
-        //    _context.Entry(department).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
-        //    _context.SaveChanges();
-        //    return department;
-
-
-
-        //}
     }
 }

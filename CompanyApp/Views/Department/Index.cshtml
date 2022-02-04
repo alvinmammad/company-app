@@ -11,7 +11,15 @@
         </div>
     </div>
 
+    @if (TempData["Success"] != null) { 
 
+        <div class="alert alert-success">
+            <strong>Success !</strong> @TempData["Success"]
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        </div>
+    }
     <div class="row">
         <table class="table table-bordered shadow-lg p-3 mb-5 bg-white rounded">
             <thead>
@@ -20,7 +28,7 @@
                     <th scope="col">@Html.DisplayNameFor(model => model.DepName)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.DepManagerName)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.DepManagerSurname)</th>
-                    <th scope="col">Edit / Delete</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,19 +60,3 @@
 
     </div>
 </div>
-
-@section Scripts{
-    <script type="text/javascript">
-        function showModal(message) {
-            var alertBody = document.getElementById('successAlert');
-            alertBody.innerHTML = message;
-            $('#modalSuccess').modal('show');
-        }
-        $(document).ready(function () {
-            var msg = "@TempData["Success"]";
-            if (msg) {
-                showModal(msg);
-            }
-        })
-    </script>
-}

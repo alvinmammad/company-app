@@ -74,7 +74,7 @@
                 @Html.DisplayNameFor(model => model.Department)
             </dt>
             <dd class="col-sm-8">
-                @Html.DisplayFor(model => model.Department.DepManagerName)
+                @Html.DisplayFor(model => model.Department.DepName)
             </dd>
         </dl>
 
@@ -87,9 +87,5 @@
         </form>
     </div>
 
-    @*<form asp-action="Delete">
-        <input type="hidden" asp-for="ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>*@
+   
 </div>

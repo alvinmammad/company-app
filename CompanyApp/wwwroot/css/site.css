@@ -1,5 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿
 
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
@@ -11,7 +10,6 @@ a.navbar-brand {
     word-break: break-all;
 }
 
-/* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
 }
@@ -28,8 +26,6 @@ a {
   border-color: #1861ac;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
 html {
     font-size: 14px;
     font-family: 'Space Grotesk', sans-serif !important;
@@ -55,16 +51,14 @@ button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
-
-/* Sticky footer styles
--------------------------------------------------- */
+/
 html {
   position: relative;
   min-height: 100%;
 }
 
 body {
-    /* Margin bottom by footer height */
+
     margin-bottom: 60px;
     font-family: 'Space Grotesk', sans-serif !important;
 }
@@ -73,10 +67,10 @@ body {
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 60px; 
 }
 
-/*-------------------------*/
+
 .card {
     background-color: #fff;
     border-radius: 10px;
@@ -102,10 +96,7 @@ body {
     opacity: 0.3;
 }
 
-/*.l-bg-cyan {
-    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
-    color: #fff;
-}*/
+
 
 .bg-red {
     background: #D82A34;
@@ -147,6 +138,3 @@ body {
     color: black;
 }
 
-.editEmployee{
-
-}

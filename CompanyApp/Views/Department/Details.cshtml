@@ -13,31 +13,31 @@
  <div class="container">
      <div class="row">
          <dl class="row">
-             <dt class="col-sm-4">
+             <dd class="col-sm-4">
                  @Html.DisplayNameFor(model => model.DepName)
-             </dt>
-             <dd class="col-sm-8">
+             </dd>
+             <dt class="col-sm-8">
                  @Html.DisplayFor(model => model.DepName)
-             </dd>
-             <dt class="col-sm-4">
+             </dt>
+             <dd class="col-sm-4">
                  @Html.DisplayNameFor(model => model.DepManagerName)
-             </dt>
-             <dd class="col-sm-8">
+             </dd>
+             <dt class="col-sm-8">
                  @Html.DisplayFor(model => model.DepManagerName)
-             </dd>
-             <dt class="col-sm-4">
-                 @Html.DisplayNameFor(model => model.DepManagerSurname)
              </dt>
-             <dd class="col-sm-8">
-                 @Html.DisplayFor(model => model.DepManagerSurname)
+             <dd class="col-sm-4">
+                 @Html.DisplayNameFor(model => model.DepManagerSurname)
              </dd>
+             <dt class="col-sm-8">
+                 @Html.DisplayFor(model => model.DepManagerSurname)
+             </dt>
          </dl>
 
      </div>
      <div class="row">
          <div>
-             <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-outline-info">Edit</a> |
-             <a asp-action="Index">Back to List</a>
+             <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-outline-primary">Edit</a> |
+             <a asp-action="Index" class="btn btn-outline-info ">Back to List</a>
          </div>
      </div>
  </div>

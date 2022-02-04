@@ -1,9 +1,5 @@
 ﻿@model CompanyApp.Models.Employee
 
-<div class="text-center" style="margin-bottom:70px;">
-    <h1 class="display-4">Create department</h1>
-</div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -18,7 +14,7 @@
                                 @Html.LabelFor(model => model.FirstName)
                                 @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-                                @*<input type="text" class="form-control" name="Name" id="Name">*@
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -26,80 +22,67 @@
                                 @Html.LabelFor(model => model.Surname)
                                 @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
-                                @*<input type="text" class="form-control" name="Name" id="Name">*@
+                              
                             </div>
                         </div>  <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Age)
                                 @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
-                                @*<input type="text" class="form-control" name="Name" id="Name">*@
+                              
                             </div>
                         </div>  <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Country)
                                 @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
-                                @*<input type="text" class="form-control" name="Name" id="Name">*@
+                               
                             </div>
                         </div>  <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.City)
                                 @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
-                                @*<input type="text" class="form-control" name="Name" id="Name">*@
+                              
                             </div>
                         </div>  <div class="col-md-6">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.BirthDate)
-                                @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
-                                @*<input type="text" class="form-control" name="Name" id="Name">*@
-                            </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BirthDate)
+                                        @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control" } })
+                                      
+                                        @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
+                                      
+                                    </div>
                         </div>  <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Salary)
                                 @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
-                                @*<input type="text" class="form-control" name="Name" id="Name">*@
+                               
                             </div>
                         </div>  <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Phone)
                                 @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                                @*<input type="text" class="form-control" name="Name" id="Name">*@
+                              
                             </div>
                         </div>  <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Email)
                                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                @*<input type="text" class="form-control" name="Name" id="Name">*@
+                              
                             </div>
                         </div>  <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Position)
                                 @Html.EditorFor(model => model.Position, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Position, "", new { @class = "text-danger" })
-                                @*<input type="text" class="form-control" name="Name" id="Name">*@
+                              
                             </div>
                         </div>
-                        @*<div class="col-md-6">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.DepartmentID)
-                                <select class="form-control" asp-for="@Model.DepartmentID">
-                                    <option value="">Select deparment</option>
-                                    @foreach (var department in Model.Departments)
-                                    {
-                                        <option value="@department.ID">@department.DepName</option>
-                                    }
-                                </select>
-                             
-                                @Html.ValidationMessageFor(model => model.DepartmentID, "", new { @class = "text-danger" })
-                               
-                            </div>
-                        </div>*@
+                     
 
                     <div class="col-md-6">
                         <div class="form-group">
@@ -107,7 +90,7 @@
                             <select asp-for="DepartmentID" class="form-control" asp-items="ViewBag.DepartmentID"></select>
                         </div>
                     </div>
-                        @*<input asp-for="@Model.ID" type="hidden" name="name" value="@Model.ID" />*@
+                     
 
 
                     </div>
@@ -115,21 +98,9 @@
                             <input type="submit" value="Save" id="createDep" class="btn btn-outline-primary" />
                         </div>
 
-
                     }
-                    @*<form id="employee-form" asp-controller="Department" asp-action="Create" method="post">*@
-
-                    <div>
-                        <button id="btnn">click</button>
-                    </div>
-
-                    @*</form>*@
-
                 </div>
-
-
             </div>
-
         </div>
     </div>
 </div>
